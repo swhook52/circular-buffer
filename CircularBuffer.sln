@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularBuffer", "CircularBuffer\CircularBuffer.csproj", "{B4ECD710-3E27-400E-A7CC-2EF5E09538A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularBuffer.Tests", "CircularBuffer.Tests\CircularBuffer.Tests.csproj", "{64225485-805F-40C1-AF3F-8CFAE9E16370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,26 @@ Global
 		{B4ECD710-3E27-400E-A7CC-2EF5E09538A5}.Release|x64.Build.0 = Release|x64
 		{B4ECD710-3E27-400E-A7CC-2EF5E09538A5}.Release|x86.ActiveCfg = Release|x86
 		{B4ECD710-3E27-400E-A7CC-2EF5E09538A5}.Release|x86.Build.0 = Release|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|ARM.ActiveCfg = Debug|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|ARM.Build.0 = Debug|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|ARM.Deploy.0 = Debug|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x64.ActiveCfg = Debug|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x64.Build.0 = Debug|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x64.Deploy.0 = Debug|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x86.ActiveCfg = Debug|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x86.Build.0 = Debug|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Debug|x86.Deploy.0 = Debug|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|Any CPU.ActiveCfg = Release|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|ARM.ActiveCfg = Release|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|ARM.Build.0 = Release|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|ARM.Deploy.0 = Release|ARM
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x64.ActiveCfg = Release|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x64.Build.0 = Release|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x64.Deploy.0 = Release|x64
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x86.ActiveCfg = Release|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x86.Build.0 = Release|x86
+		{64225485-805F-40C1-AF3F-8CFAE9E16370}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

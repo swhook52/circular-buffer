@@ -24,10 +24,10 @@ namespace CircularBuffer
 
         public T[] Read(int start, int length)
         {
-            var result = new T[length - 1];
+            var result = new T[length];
             for (int i = 0; i < length; i++)
             {
-                result[i] = _buffer[start + i % _buffer.Length];
+                result[i] = _buffer[(start + i) % _buffer.Length];
             }
             return result;
         }
