@@ -31,5 +31,10 @@ namespace CircularBuffer
             }
             return result;
         }
+
+        public void Write(T[] array) 
+        {
+            foreach (var item in array ?? Enumerable.Empty<T>()) Add(item);            
+        }
     }
 }
