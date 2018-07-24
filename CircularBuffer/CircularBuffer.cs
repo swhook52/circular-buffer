@@ -9,14 +9,16 @@ namespace CircularBuffer
     {
         private T[] _buffer;
         private int _nextFree;
+        public int Length { get; private set; }
 
         public CircularBuffer(int length)
         {
+            Length = length;
             _buffer = new T[length];
             _nextFree = 0;
         }
 
-        public void Add(T item)
+        private void Add(T item)
         {
             _buffer[_nextFree] = item;
             _nextFree = (_nextFree + 1) % _buffer.Length;
@@ -34,7 +36,10 @@ namespace CircularBuffer
 
         public void Write(T[] array) 
         {
-            foreach (var item in array ?? Enumerable.Empty<T>()) Add(item);            
+            foreach (var item in array ?? Enumerable.Empty<T>())
+            {
+                Add(item);
+            }
         }
     }
 }

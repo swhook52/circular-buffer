@@ -10,9 +10,7 @@ public class CircularBufferTest
     {
         // Arrange
         var uut = new CircularBuffer<byte>(3);
-        uut.Add(0);
-        uut.Add(1);
-        uut.Add(2);
+        uut.Write(new byte[] { 0, 1, 2 });
 
         // Act
         var result = uut.Read(1, 3);
@@ -29,9 +27,7 @@ public class CircularBufferTest
     {
         // Arrange
         var uut = new CircularBuffer<byte>(3);
-        uut.Add(0);
-        uut.Add(1);
-        uut.Add(2);
+        uut.Write(new byte[] { 0, 1, 2 });
 
         // Act
         var result = uut.Read(0, 2);
@@ -41,42 +37,7 @@ public class CircularBufferTest
         Assert.AreEqual(0, result[0]);
         Assert.AreEqual(1, result[1]);
     }
-
-    [TestMethod]
-    public void Add_MultipleItems_ReturnsBuffer()
-    {
-        // Arrange
-        var uut = new CircularBuffer<byte>(3);
-
-        // Act
-        uut.Add(0);
-        uut.Add(1);
-        var result = uut.Read(0, 3);
-
-        // Assert
-        Assert.AreEqual(3, result.Length);
-        Assert.AreEqual(0, result[0]);
-        Assert.AreEqual(1, result[1]);
-    }
-
-    [TestMethod]
-    public void Add_MultipleItemsPastLength_ReturnsCircular()
-    {
-        // Arrange
-        var uut = new CircularBuffer<byte>(2);
-
-        // Act
-        uut.Add(0);
-        uut.Add(1);
-        uut.Add(2);
-        var result = uut.Read(0, 2);
-
-        // Assert
-        Assert.AreEqual(2, result.Length);
-        Assert.AreEqual(2, result[0]);
-        Assert.AreEqual(1, result[1]);
-    }
-
+    
     [TestMethod]
     public void Write_SingleItem_ReturnsBuffer()
     {

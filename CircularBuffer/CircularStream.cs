@@ -1,7 +1,5 @@
 using System;
 using System.IO;
-using Windows.Foundation;
-using Windows.Storage.Streams;
 
 namespace CircularBuffer
 {
@@ -14,15 +12,30 @@ namespace CircularBuffer
             _circularBuffer = new CircularBuffer<byte>(length);
         }
 
+        public override bool CanRead => true;
+
+        public override bool CanSeek => true;
+
+        public override bool CanWrite => true;
+
+        public override long Length => _circularBuffer.Length;
+
+        public override long Position
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
         public override void Flush()
         {
-            
         }
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            buffer = _circularBuffer.Read(offset, count);
-            return buffer.Length;
+            var itemsRead = _circularBuffer.Read(offset, count);
+            itemsRead.CopyTo(buffer, 0);
+            
+            return count >= _circularBuffer.Length ? _circularBuffer.Length : count;
         }
 
         public override long Seek(long offset, SeekOrigin origin)
@@ -37,13 +50,7 @@ namespace CircularBuffer
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            throw new NotImplementedException();
+            _circularBuffer.Write(buffer);
         }
-
-        public override bool CanRead { get; }
-        public override bool CanSeek { get; }
-        public override bool CanWrite { get; }
-        public override long Length { get; }
-        public override long Position { get; set; }
     }
 }
