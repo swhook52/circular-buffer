@@ -8,20 +8,20 @@ namespace CircularBuffer
     public class CircularBuffer<T>
     {
         private T[] _buffer;
-        private int _nextFree;
         public int Length { get; private set; }
+        public long CurrentPosition;
 
         public CircularBuffer(int length)
         {
             Length = length;
             _buffer = new T[length];
-            _nextFree = 0;
+            CurrentPosition = 0;
         }
 
         private void Add(T item)
         {
-            _buffer[_nextFree] = item;
-            _nextFree = (_nextFree + 1) % _buffer.Length;
+            _buffer[CurrentPosition] = item;
+            CurrentPosition = (CurrentPosition + 1) % _buffer.Length;
         }
 
         public T[] Read(int start, int length)

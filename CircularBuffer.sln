@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularBuffer", "CircularBuffer\CircularBuffer.csproj", "{C2739B65-B164-4356-B0BB-2F9371C85DDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CircularBuffer", "CircularBuffer\CircularBuffer.csproj", "{C2739B65-B164-4356-B0BB-2F9371C85DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularBuffer.Tests", "CircularBuffer.Tests\CircularBuffer.Tests.csproj", "{2991410B-A6F8-44C3-B70F-2BABB646B799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CircularBuffer.Tests", "CircularBuffer.Tests\CircularBuffer.Tests.csproj", "{2991410B-A6F8-44C3-B70F-2BABB646B799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularBuffer.Example", "CircularBuffer.Example\CircularBuffer.Example.csproj", "{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,26 @@ Global
 		{2991410B-A6F8-44C3-B70F-2BABB646B799}.Release|x64.Build.0 = Release|Any CPU
 		{2991410B-A6F8-44C3-B70F-2BABB646B799}.Release|x86.ActiveCfg = Release|Any CPU
 		{2991410B-A6F8-44C3-B70F-2BABB646B799}.Release|x86.Build.0 = Release|Any CPU
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|ARM.Build.0 = Debug|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|ARM.Deploy.0 = Debug|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x64.ActiveCfg = Debug|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x64.Build.0 = Debug|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x64.Deploy.0 = Debug|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x86.ActiveCfg = Debug|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x86.Build.0 = Debug|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Debug|x86.Deploy.0 = Debug|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|Any CPU.ActiveCfg = Release|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|ARM.ActiveCfg = Release|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|ARM.Build.0 = Release|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|ARM.Deploy.0 = Release|ARM
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x64.ActiveCfg = Release|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x64.Build.0 = Release|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x64.Deploy.0 = Release|x64
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x86.ActiveCfg = Release|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x86.Build.0 = Release|x86
+		{D3E0C4FB-3E0C-41AD-A9EE-D0255B9ABF41}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
