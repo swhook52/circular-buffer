@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CircularBuffer
+﻿namespace CircularBuffer
 {
     public class CircularBuffer<T>
     {
@@ -18,12 +13,6 @@ namespace CircularBuffer
             CurrentPosition = 0;
         }
 
-        private void Add(T item)
-        {
-            _buffer[CurrentPosition] = item;
-            CurrentPosition = (CurrentPosition + 1) % _buffer.Length;
-        }
-
         public T[] Read(int start, int length)
         {
             var result = new T[length];
@@ -34,11 +23,17 @@ namespace CircularBuffer
             return result;
         }
 
-        public void Write(T[] array) 
+        public void Write(T[] bufferToWrite, int offset, int countToWrite) 
         {
-            foreach (var item in array ?? Enumerable.Empty<T>())
+            if (bufferToWrite == null)
             {
-                Add(item);
+                return;
+            }
+
+            for (int i = offset; i < countToWrite; i++)
+            {
+                _buffer[CurrentPosition] = bufferToWrite[i];
+                CurrentPosition = (CurrentPosition + 1) % _buffer.Length;
             }
         }
     }

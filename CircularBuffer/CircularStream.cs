@@ -34,7 +34,6 @@ namespace CircularBuffer
         public override int Read(byte[] buffer, int offset, int count)
         {
             var itemsRead = _circularBuffer.Read(offset, count);
-            Debug.WriteLine(_circularBuffer.CurrentPosition);
             itemsRead.CopyTo(buffer, 0);
             
             return count >= _circularBuffer.Length ? _circularBuffer.Length : count;
@@ -67,7 +66,7 @@ namespace CircularBuffer
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            _circularBuffer.Write(buffer);
+            _circularBuffer.Write(buffer, offset, count);
         }
 
         public byte[] Dump()

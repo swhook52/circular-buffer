@@ -1,22 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using CircularBuffer;
-using System.Diagnostics;
+using Windows.Storage;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,7 +16,7 @@ namespace CircularBuffer.Example
     public sealed partial class MainPage : Page
     {
         private MediaCapture _captureManager;
-        private CircularStream stream = new CircularStream(10);
+        private CircularStream _stream = new CircularStream(1000000);
 
         public MainPage()
         {
@@ -42,16 +30,21 @@ namespace CircularBuffer.Example
             await _captureManager.InitializeAsync();
             VideoFeed.Source = _captureManager;
 
-
             await _captureManager.StartPreviewAsync();
-
-            await _captureManager.StartRecordToStreamAsync(MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto), stream.AsRandomAccessStream());
-
+            await _captureManager.StartRecordToStreamAsync(MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto), _stream.AsRandomAccessStream());
         }
 
-        private void DumpButton_Click(object sender, RoutedEventArgs e)
+        private async void DumpButton_Click(object sender, RoutedEventArgs e)
         {
-            Debug.Write(stream.Dump());
+            await _captureManager.StopRecordAsync();
+
+            var data = new byte[_stream.Length];
+            await _stream.ReadAsync(data, 0, data.Length);
+
+            var storageFolder = ApplicationData.Current.LocalFolder;
+            var sampleFile = await storageFolder.CreateFileAsync("test.mp4", CreationCollisionOption.ReplaceExisting);
+
+            await FileIO.WriteBytesAsync(sampleFile, data);
         }
     }
 }
