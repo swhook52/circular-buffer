@@ -10,7 +10,7 @@ public class CircularBufferTest
     {
         // Arrange
         var uut = new CircularBuffer<byte>(3);
-        uut.Write(new byte[] { 0, 1, 2 });
+        //uut.Write(new byte[] { 0, 1, 2 });
 
         // Act
         var result = uut.Read(1, 3);
@@ -27,7 +27,7 @@ public class CircularBufferTest
     {
         // Arrange
         var uut = new CircularBuffer<byte>(3);
-        uut.Write(new byte[] { 0, 1, 2 });
+        //uut.Write(new byte[] { 0, 1, 2 });
 
         // Act
         var result = uut.Read(0, 2);
@@ -45,7 +45,7 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(1);
 
         // Act
-        uut.Write(new byte[] { 0 });
+        //uut.Write(new byte[] { 0 });
         var result = uut.Read(0, 1);
 
         // Assert
@@ -60,7 +60,7 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(3);
 
         // Act
-        uut.Write(new byte[] { 0, 1, 2 });
+        //uut.Write(new byte[] { 0, 1, 2 });
         var result = uut.Read(0, 3);
 
         // Assert
@@ -77,7 +77,7 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(2);
 
         // Act
-        uut.Write(new byte[] { 0, 1, 2, 3, 4 });
+        //uut.Write(new byte[] { 0, 1, 2, 3, 4 });
         var result = uut.Read(0, 2);
 
         // Assert
@@ -93,8 +93,8 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(2);
 
         // Act
-        uut.Write(new byte[] { 0 });
-        uut.Write(new byte[] { 1 });
+        //uut.Write(new byte[] { 0 });
+        //uut.Write(new byte[] { 1 });
         var result = uut.Read(0, 2);
 
         // Assert
@@ -110,8 +110,8 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(4);
 
         // Act
-        uut.Write(new byte[] { 0, 1 });
-        uut.Write(new byte[] { 2, 3 });
+        //uut.Write(new byte[] { 0, 1 });
+        //uut.Write(new byte[] { 2, 3 });
         var result = uut.Read(0, 4);
 
         // Assert
@@ -129,8 +129,8 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(2);
 
         // Act
-        uut.Write(new byte[] { 0, 1, 2, 3, 4 });
-        uut.Write(new byte[] { 5, 6 });
+        //uut.Write(new byte[] { 0, 1, 2, 3, 4 });
+        //uut.Write(new byte[] { 5, 6 });
         var result = uut.Read(0, 2);
 
         // Assert
@@ -146,8 +146,8 @@ public class CircularBufferTest
         var uut = new CircularBuffer<byte>(2);
 
         // Act
-        uut.Write(new byte[] { 0, 1});
-        uut.Write(null);
+        //uut.Write(new byte[] { 0, 1});
+        //uut.Write(null);
         var result = uut.Read(0, 2);
 
         // Assert
